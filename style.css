@@ -1,0 +1,427 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bleu: #1941B3;
+    --bleu-fonce: #12308A;
+    --rouge: #FF135A;
+    --vert: #1C8275;
+    --fond: #F4F6FB;
+    --blanc: #FFFFFF;
+    --texte: #1A1F2E;
+    --secondaire: #64748B;
+    --bordure: #E2E8F0;
+    --rayon: 14px;
+    --ombre: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--bordure);
+    box-shadow: var(--ombre);
+    padding: 15px 6%;
+}
+
+.entete {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.identite {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--bleu);
+}
+
+.identite img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.identite-texte h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.identite-texte p {
+    font-size: 0.72rem;
+    color: var(--secondaire);
+    max-width: 330px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--texte);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--bleu);
+    border-bottom-color: var(--rouge);
+}
+
+/* Contenu principal */
+main {
+    width: min(1150px, 92%);
+    margin: 35px auto;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+/* Présentation */
+.presentation {
+    background: linear-gradient(120deg, var(--bleu), #315BC5);
+    color: var(--blanc);
+    padding: 40px;
+    border-radius: var(--rayon);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(25, 65, 179, 0.16);
+}
+
+.presentation::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 35px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    right: -55px;
+    top: -90px;
+}
+
+.surtitre {
+    display: inline-block;
+    color: #D8E5FF;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.presentation h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.presentation p {
+    color: #E2EAFE;
+    max-width: 650px;
+}
+
+/* Recherche et titres */
+.recherche,
+#etudiants,
+.contact {
+    background: var(--blanc);
+    padding: 28px;
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+}
+
+.titre-section {
+    margin-bottom: 22px;
+}
+
+.titre-section h2,
+.contact h2 {
+    color: var(--bleu);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.titre-section p,
+.contact p {
+    color: var(--secondaire);
+    font-size: 0.9rem;
+}
+
+/* Formulaire de recherche */
+form {
+    display: flex;
+    gap: 12px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    border: 1px solid var(--bordure);
+    border-radius: 9px;
+    font: inherit;
+    color: var(--texte);
+    background: #FAFBFD;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--bleu);
+    box-shadow: 0 0 0 3px rgba(25, 65, 179, 0.12);
+}
+
+input::placeholder {
+    color: #94A3B8;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 9px;
+    background: var(--bleu);
+    color: var(--blanc);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--bleu-fonce);
+    transform: translateY(-2px);
+}
+
+/* Cartes des étudiants */
+.cartes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.carte {
+    background: var(--blanc);
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    padding: 24px 18px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.carte::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--vert);
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(25, 65, 179, 0.10);
+    border-color: #C5D3F4;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    margin: 5px auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E8EEFF;
+    color: var(--bleu);
+    font-size: 1.2rem;
+    font-weight: 800;
+    border: 3px solid #D5E0FF;
+}
+
+.carte h3 {
+    color: var(--texte);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.filiere {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #E6F4F1;
+    color: var(--vert);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.note {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid var(--bordure);
+    color: var(--secondaire);
+    font-size: 0.85rem;
+}
+
+.note strong {
+    color: var(--bleu);
+    font-size: 0.95rem;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.contact h2 {
+    margin-bottom: 8px;
+}
+
+.contact p {
+    margin-bottom: 18px;
+}
+
+.contact a {
+    display: inline-block;
+    padding: 11px 25px;
+    border-radius: 9px;
+    background: var(--vert);
+    color: var(--blanc);
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    background: #12665C;
+    transform: translateY(-2px);
+}
+
+/* Pied de page */
+footer {
+    background: var(--bleu);
+    color: var(--blanc);
+    text-align: center;
+    padding: 22px 15px;
+}
+
+footer p {
+    font-size: 0.85rem;
+    margin: 4px 0;
+}
+
+footer p:last-child {
+    color: #D5E0FF;
+    font-size: 0.75rem;
+}
+
+/* Accessibilité */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--rouge);
+    outline-offset: 4px;
+}
+
+/* Tablettes */
+@media (max-width: 850px) {
+    .entete {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cartes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Téléphones */
+@media (max-width: 550px) {
+    header {
+        padding: 15px;
+    }
+
+    .identite img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .identite-texte h1 {
+        font-size: 1.5rem;
+    }
+
+    .identite-texte p {
+        font-size: 0.65rem;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .presentation {
+        padding: 25px 20px;
+    }
+
+    .presentation h2 {
+        font-size: 1.5rem;
+    }
+
+    .recherche,
+    #etudiants,
+    .contact {
+        padding: 20px 15px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .cartes {
+        grid-template-columns: 1fr;
+    }
+}
